@@ -4,7 +4,7 @@
     - vcenter_vars.yml
   hosts: "{{ vm_ip }}"
   tasks:
-    - name: Add iso repository to vm guest
+    - name: Add iso repository to the new VM Guest
       yum_repository:
         name: yumiso
         description: yum repo server yum.demo.local
@@ -14,7 +14,7 @@
 
     - name: Install the latest version of apache and firewall package
       yum:
-        name: 
+        name:
           - httpd
           - firewalld
         state: latest
@@ -36,7 +36,7 @@
       service:
         name: httpd
         enabled: true
-        state: started       
+        state: started
 
     - name: Create sample index.html with ownership, group and permissions
       file:
@@ -45,12 +45,9 @@
         group: apache
         state: touch
         mode: '0644'
-        
+
     - name: update index.html by lineinfile module
       lineinfile:
         path: /var/www/html/index.html
         line: This is the demo HTML file running on web server {{ ansible_facts['fqdn'] }} with IP address {{ ansible_facts['default_ipv4']['address'] }}
         state: present
-
-
-
