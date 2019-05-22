@@ -19,3 +19,17 @@
     service:
       name: httpd
       state: started
+
+  - name: Create sample index.html with ownership, group and permissions
+    file:
+      path: /var/www/html/index.html
+      owner: apache
+      group: apache
+      state: touch
+      mode: '0644'
+
+  - name: update index.html by lineinfile module
+    lineinfile:
+      path: /var/www/html/index.html
+      line: This is the AWS EC2 instance provisioning demo of rhel7 guest {{ ansible_facts['fqdn'] }} with IP address {{ ansible_facts['default_ipv4']['address'] }}
+      state: present

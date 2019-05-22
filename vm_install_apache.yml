@@ -49,5 +49,5 @@
     - name: update index.html by lineinfile module
       lineinfile:
         path: /var/www/html/index.html
-        line: This is the demo HTML file running on web server {{ ansible_facts['fqdn'] }} with IP address {{ ansible_facts['default_ipv4']['address'] }}
+        line: This is the VMware provisioning demo of rhel7 guest {{ ansible_facts['fqdn'] }} with IP address {{ ansible_facts['default_ipv4']['address'] }}
         state: present
