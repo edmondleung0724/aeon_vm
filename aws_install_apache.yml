@@ -42,5 +42,5 @@
   - name: update index.html by lineinfile module
     lineinfile:
       path: /var/www/html/index.html
-      line: This is the AWS EC2 instance provisioning demo
+      line: <h1><font color="blue"> AWS EC2 Instance </font>Provisioning Demo </h1>
       state: present
