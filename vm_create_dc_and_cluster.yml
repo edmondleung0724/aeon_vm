@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: False
   vars_files:
-    - vcenter_vars.yml
+    - vm_vcenter_vars.yml
   tasks:
     - name: Create a datacenter "{{ datacenter }}"
       vmware_datacenter:
