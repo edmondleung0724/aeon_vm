@@ -11,6 +11,15 @@
   #   raw: sudo yum -y install python
   #   #raw: yum -y install python
   tasks:
+  - name: Disable SSL verification
+    replace:
+      path: /etc/yum.repos.d/redhat-rhui-client-config.repo
+      regexp: 'sslverify=1'
+      replace: 'sslverify=0'
+
+  - name: Execute yum clean all
+    shell: yum clean all
+
   - name: Install apache packages
     yum:
       name: httpd
