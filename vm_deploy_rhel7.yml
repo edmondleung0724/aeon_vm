@@ -2,7 +2,7 @@
 - name: Guest Creation
   gather_facts: no
   vars_files:
-    - vcenter_vars.yml
+    - vm_vcenter_vars.yml
   hosts: localhost
   tasks:
     - name: Clone a virtual machine {{ vm_name }} from existing template {{ template_name }}
@@ -12,7 +12,7 @@
         hostname: "{{ vcenter_server }}"
         username: "{{ vcenter_user }}"
         password: "{{ vcenter_pass }}"
-        validate_certs: no 
+        validate_certs: no
         folder: "{{ folder }}"
         datacenter: "{{ datacenter }}"
         networks:
@@ -37,7 +37,7 @@
 
     - name: Add host into tower
       tower_host:
-        name: "{{ vm_ip }}" 
+        name: "{{ vm_ip }}"
         inventory: "aeon_new_vm_inv"
         tower_username: admin
         tower_password: password
