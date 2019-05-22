@@ -1,0 +1,21 @@
+---
+
+#- hosts: "{{ host }}"
+- hosts: "{{ results }}"
+  #remote_user: ec2-user
+  become: yes
+  gather_facts: no
+
+  pre_tasks:
+  - name: 'install python'
+    raw: sudo yum -y install python
+    #raw: yum -y install python
+  tasks:
+  - name: Install apache packages
+    yum:
+      name: httpd
+      state: present
+  - name: ensure httpd is running
+    service:
+      name: httpd
+      state: started
