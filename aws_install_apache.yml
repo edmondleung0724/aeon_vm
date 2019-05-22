@@ -40,5 +40,5 @@
   - name: update index.html by lineinfile module
     lineinfile:
       path: /var/www/html/index.html
-      line: This is the AWS EC2 instance provisioning demo of rhel7 guest with Hostname {{ ansible_facts['fqdn'] }} and IP address {{ ansible_facts['default_ipv4']['address'] }}
+      line: This is the AWS EC2 instance provisioning demo
       state: present
