@@ -1,7 +1,7 @@
 ---
 - name: Install Apache
   vars_files:
-    - vcenter_vars.yml
+    - vm_vcenter_vars.yml
   hosts: "{{ vm_ip }}"
   tasks:
     - name: Add iso repository to the new VM Guest
