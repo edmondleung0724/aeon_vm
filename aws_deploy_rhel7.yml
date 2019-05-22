@@ -7,7 +7,8 @@
   vars:
       region: ap-southeast-1
       instance_type: t2.micro
-      ami: ami-76144b0a  # Red Hat Enterprise Linux 7.5 (HVM), SSD Volume Type
+#      ami: ami-76144b0a  # Red Hat Enterprise Linux 7.5 (HVM), SSD Volume Type
+      ami: ami-055c55112e25b1f1f
       security_group: SSH only
       keypair: Linux_Test_1_Key # pem file name
       count: 1
