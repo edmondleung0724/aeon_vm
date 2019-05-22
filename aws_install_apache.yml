@@ -19,6 +19,8 @@
 
   - name: Execute yum clean all
     shell: yum clean all
+    args:
+      warn: no
 
   - name: Install apache packages
     yum:
